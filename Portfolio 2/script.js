@@ -11,7 +11,7 @@ tl.from(" .nav-menu li i, .nav-menu li a", {
   x: -70,
   duration: 0.1,
   opacity: 0,
-  stagger: 0.2,
+  stagger: 0.07,
 });
 tl.from(".cut", {
   opacity: 0,
