@@ -12,8 +12,49 @@ const Navbar = () => {
   const timerId = useRef(null);
 
   useEffect(() => {
-    
-  })
+    const homeSection = document.querySelector("#home");
+    const observer = new IntersectionObserver(([entry]) => {
+      if(entry.isIntersecting){
+        setForceVisible(true);
+        setVisible(true);
+      } else {
+        setForceVisible(false);
+      }
+
+    },{threshold :0.1}
+  )
+  if(homeSection) observer.observe(homeSection);
+  return () => {
+    if(homeSection) observer.unobserve(homeSection)
+  }
+  },[])
+
+useEffect(() => {
+  const handleScroll = () => {
+    if(forceVisible){
+      setVisible(true);
+      return
+    }
+    const currentScrollY = window.scrollY;
+    if(currentScrollY > lastScrollY.current){
+      setVisible(false)
+    } else {
+      setVisible(true)
+
+      if(timerId.current) clearTimeout(timerId.current);
+      timerId.current = setTimeout(() => {
+        setVisible(false);
+      },3000)
+    }
+    lastScrollY.current = currentScrollY;
+  }
+
+  window.addEventListener("scroll" , handleScroll , {passive:true})
+  return () => {
+    window.removeEventListener("scroll" , handleScroll)
+    if(timerId.current) clearTimeout(timerId.current)
+  }
+},[forceVisible])
 
   return (
     <>
@@ -23,7 +64,7 @@ const Navbar = () => {
         } `}
       >
         <div className="flex items-center space-x-2">
-          <img src={Logo} alt="logo" className="w-8 h-8" />
+          <img src={Logo} alt="logo" className="w-12 h-12" />
           <div className="text-2xl font-bold text-white hidden sm:block">
             Sachin
           </div>

@@ -15,7 +15,7 @@ const App = () => {
   return (
     <div className="relative gradients">
       <CustomCursor />
-      <ParticleBackground />
+      {/* <ParticleBackground /> */}
 
       <Navbar />
       <Home />
