@@ -45,6 +45,26 @@ A more advanced portfolio with enhanced UI/UX and component-based structure.
 
 📁 Folder: `portfolio-2`
 
+### 🔹 Portfolio 3 – Modern React Portfolio Website
+**Description:**  
+A more advanced portfolio with enhanced UI/UX and component-based structure.
+
+**Features:**
+- Modern UI design
+- Smooth navigation
+- Project showcase
+- Reusable components
+- Frontend-only functionality
+
+**Tech Stack:**
+- HTML
+- CSS
+- JavaScript 
+- React js
+- Framer Motion 
+
+📁 Folder: `portfolio-3`
+
 ---
 
 ## 🛠️ How to Run Locally
