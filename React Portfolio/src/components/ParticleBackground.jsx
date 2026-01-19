@@ -75,7 +75,7 @@ const ParticleBackground = () => {
     <div>
       <canvas
         ref={Canvasref}
-        className="fixed top-0 left-0 w-full h-full pointer-events-auto z-0 "
+        className="absolute top-0 left-0 w-full h-full pointer-events-auto z-0 "
       ></canvas>
     </div>
   );
