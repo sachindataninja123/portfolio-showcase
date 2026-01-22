@@ -8,6 +8,9 @@ const SERVICE_ID = import.meta.env.VITE_SERVICE_ID;
 const TEMPLATE_ID = import.meta.env.VITE_TEMPLATE_ID;
 const PUBLIC_KEY = import.meta.env.VITE_PUBLIC_KEY;
 
+// console.log(SERVICE_ID, TEMPLATE_ID, PUBLIC_KEY);
+
+
 const Contact = () => {
   const [formData, setFormData] = useState({
     name: "",
@@ -19,7 +22,7 @@ const Contact = () => {
   const [errors, setErrors] = useState({});
   const [status, setStatus] = useState("");
 
-  const handleChange = () => {
+  const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData((p) => ({ ...p, [name]: value }));
     if (errors[name]) setErrors((p) => ({ ...p, [name]: " " }));
@@ -51,7 +54,7 @@ const Contact = () => {
         },
         PUBLIC_KEY,
       );
-      setStatus("Success");
+      setStatus("success");
       setFormData({
         name: "",
         email: "",
@@ -106,7 +109,7 @@ const Contact = () => {
                 value={formData.name}
                 placeholder="Your Name"
                 onChange={handleChange}
-                className={`p-3 rounded-md bg-white/10 border ${errors.name ? "bg-red-500" : "border-gray-500"} text-white focus:outline-none focus:border-blue-500`}
+                className={`p-3 rounded-md bg-white/10 border ${errors.name ? "border-red-500" : "border-gray-500"} text-white focus:outline-none focus:border-blue-500`}
               />
               {errors.name && (
                 <p className="text-red-500 text-xs">{errors.name}</p>
@@ -123,7 +126,7 @@ const Contact = () => {
                 value={formData.email}
                 placeholder="Your Email"
                 onChange={handleChange}
-                className={`p-3 rounded-md bg-white/10 border ${errors.email ? "bg-red-500" : "border-gray-500"} text-white focus:outline-none focus:border-blue-500`}
+                className={`p-3 rounded-md bg-white/10 border ${errors.email ? "border-red-500" : "border-gray-500"} text-white focus:outline-none focus:border-blue-500`}
               />
               {errors.email && (
                 <p className="text-red-500 text-xs">{errors.email}</p>
@@ -160,6 +163,42 @@ const Contact = () => {
                 <p className="text-red-500 text-xs">{errors.service}</p>
               )}
             </div>
+
+            <div className="flex flex-col ">
+              <label className="mb-1">
+                Explain Your Idea<span className="text-red-500">*</span>
+              </label>
+              <textarea
+                name="idea"
+                rows={5}
+                placeholder="Enter Your Idea"
+                value={formData.idea}
+                onChange={handleChange}
+                className={`p-3 rounded-md bg-white/10 border ${
+                  errors.service ? "border-red-500" : "border-gray-500"
+                } text-white focus:outline-none focus:border-blue-500`}
+              ></textarea>
+              {errors.idea && (
+                <p className="text-red-500 text-xs">{errors.idea}</p>
+              )}
+            </div>
+
+              {status && (
+                <p className={`text-sm ${status === "success" ? "text-green-400" : status === "error" ? "text-red-400" : "text-yellow-400"}`}>
+                  {status === "sending" ? "sending..." : status === "success" ? "Message sent successfully ✅" : "something went wrong ❌"}
+                </p>
+              )}
+
+              <motion.button className="bg-blue-600 hover:bg-blue-700 disabled:opacity-60 text-white py-3 rounded-md font-semibold transition"
+              whileHover={{scale : 1.05}}
+              whileTap={{scale : 0.95}}
+              disabled={status === "sending"}
+              type= "submit"
+              >
+                {status === "sending" ? "sending..." : "Send Message"}
+
+              </motion.button>
+
           </form>
         </motion.div>
       </div>
