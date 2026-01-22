@@ -5,7 +5,6 @@ import Home from "./sections/Home";
 import Skills from "./sections/Skills";
 import Projects from "./sections/Projects";
 import Experience from "./sections/Experience";
-import Testmonials from "./sections/Testmonials";
 import Contact from "./sections/Contact";
 import Footer from "./sections/Footer";
 import CustomCursor from "./components/CustomCursor";
@@ -28,7 +27,6 @@ const App = () => {
           <Skills />
           <Projects />
           <Experience />
-          <Testmonials />
           <Contact />
           <Footer />
         </div>
