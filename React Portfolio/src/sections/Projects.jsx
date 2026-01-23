@@ -12,6 +12,7 @@ import img2 from "../assets/img2.JPG";
 import photo2 from "../assets/photo2.PNG";
 import img3 from "../assets/img3.JPG";
 import photo3 from "../assets/photo3.png";
+import shoeWeb from "../assets/shoeweb.png";
 
 const useIsMobile = (query = "(max-width : 639px)") => {
   const [isMobile, setIsMobile] = useState(
@@ -36,20 +37,23 @@ const Projects = () => {
   const projects = useMemo(
     () => [
       {
-        title: "nk studio",
-        link: "https://www.nk.studio/",
+        title: "Shoe Web Frontend",
+        link: "https://stepwalk.netlify.app/",
+        Code: "https://github.com/sachindataninja123/shoesWebFrontend",
         bgColor: "#0d4d3d",
-        image: isMobile ? photo1 : img1, // use mobile or desktop image
+        image: isMobile ? photo1 : shoeWeb, // use mobile or desktop image
       },
       {
         title: "Gamily",
         link: "https://gamilyapp.com/",
+        Code: "https://github.com/sachindataninja123/shoesWebFrontend",
         bgColor: "#3884d3",
         image: isMobile ? photo2 : img2,
       },
       {
-        title: "Hungry Tiger",
-        link: "https://www.eathungrytiger.com/",
+        title: "Sundown Clone",
+        link: "https://sunredown.netlify.app/",
+        Code: "https://github.com/sachindataninja123/shoesWebFrontend",
         bgColor: "#dc9317",
         image: isMobile ? photo3 : img3,
       },
@@ -151,16 +155,32 @@ const Projects = () => {
             );
           })}
         </div>
-        <div className={`absolute ${isMobile ? "bottom-20" : "bottom-10"}`}>
-          <a
-            href={activeProject?.link}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-block px-6 py-3 font-semibold rounded-lg bg-white text-black hover:bg-gray-200 transition-all"
-            aria-label={`View ${activeProject?.title}`}
-          >
-            View Project
-          </a>
+        <div
+          className={`flex gap-5 items-center absolute ${isMobile ? "bottom-15" : "bottom-5"}`}
+        >
+          <div>
+            <a
+              href={activeProject?.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block px-6 py-3 font-semibold rounded-lg bg-white text-black hover:bg-gray-200 transition-all"
+              aria-label={`View ${activeProject?.title}`}
+            >
+              View Project
+            </a>
+          </div>
+
+          <div>
+            <a
+              href={activeProject?.Code}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block px-6 py-3 font-semibold rounded-lg bg-white text-black hover:bg-gray-200 transition-all"
+              aria-label={`View ${activeProject?.title}`}
+            >
+              View Code
+            </a>
+          </div>
         </div>
       </div>
     </section>
