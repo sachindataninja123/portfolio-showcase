@@ -31,7 +31,6 @@ const Overlay = ({ isOpen, onClose }) => {
               "Skills",
               "Projects",
               "Experience",
-              "Testimonials",
               "Contact",
             ].map((item, idx) => {
               return (

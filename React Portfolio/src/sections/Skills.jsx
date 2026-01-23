@@ -21,7 +21,7 @@ const Skills = () => {
     { icon: <FaHtml5 />, name: "HTML" },
     { icon: <FaCss3Alt />, name: "CSS" },
     { icon: <TbBrandCpp />, name: "C++" },
-    { icon: <FaJsSquare />, name: "C++" },
+    { icon: <FaJsSquare />, name: "JavaScript" },
     // { icon: <SiDocker />, name: "Docker" },
     // { icon: <DiNodejsSmall />, name: "Node.js" },
     // { icon: <SiMongodb />, name: "MongoDB" },

@@ -6,11 +6,10 @@ import {
   useScroll,
 } from "framer-motion";
 import React, { useEffect, useRef, useState, useMemo } from "react";
-import img1 from "../assets/img1.JPG";
-import photo1 from "../assets/photo1.JPG";
-import img2 from "../assets/img2.JPG";
-import photo2 from "../assets/photo2.PNG";
-import img3 from "../assets/img3.JPG";
+import project3 from "../assets/project3.png";
+import project3mob from "../assets/project3mob.png";
+import project1mob from "../assets/project1mob.png";
+import project2 from "../assets/project2.png"
 import photo3 from "../assets/photo3.png";
 import shoeWeb from "../assets/shoeweb.png";
 
@@ -37,25 +36,26 @@ const Projects = () => {
   const projects = useMemo(
     () => [
       {
+        title: "College Event Hub",
+        link: "https://drive.google.com/file/d/1NTlAsr1CL2gejRJCe-g1TQtfkhYcSCA_/view",
+        Code: "https://github.com/sachindataninja123/campus-event-hub",
+        bgColor: "#5d4141",
+        image: isMobile ? project2 : project2,
+      },
+      {
         title: "Shoe Web Frontend",
         link: "https://stepwalk.netlify.app/",
         Code: "https://github.com/sachindataninja123/shoesWebFrontend",
-        bgColor: "#0d4d3d",
-        image: isMobile ? photo1 : shoeWeb, // use mobile or desktop image
-      },
-      {
-        title: "Gamily",
-        link: "https://gamilyapp.com/",
-        Code: "https://github.com/sachindataninja123/shoesWebFrontend",
-        bgColor: "#3884d3",
-        image: isMobile ? photo2 : img2,
+        bgColor: "#f09e12",
+        image: isMobile ? project1mob : shoeWeb, // use mobile or desktop image
       },
       {
         title: "Sundown Clone",
         link: "https://sunredown.netlify.app/",
-        Code: "https://github.com/sachindataninja123/shoesWebFrontend",
-        bgColor: "#dc9317",
-        image: isMobile ? photo3 : img3,
+        Code: "https://github.com/sachindataninja123/Sundown",
+        bgColor: "#5e5e5d",
+
+        image: isMobile ? project3mob : project3,
       },
     ],
     [isMobile], // re-run only when `isMobile` changes
