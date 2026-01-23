@@ -10,7 +10,6 @@ import project3 from "../assets/project3.png";
 import project3mob from "../assets/project3mob.png";
 import project1mob from "../assets/project1mob.png";
 import project2 from "../assets/project2.png"
-import photo3 from "../assets/photo3.png";
 import shoeWeb from "../assets/shoeweb.png";
 
 const useIsMobile = (query = "(max-width : 639px)") => {
