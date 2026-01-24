@@ -44,6 +44,16 @@ const Contact = () => {
     setStatus("sending");
 
     try {
+      // await emailjs.send(
+      //   SERVICE_ID,
+      //   TEMPLATE_ID,
+      //   {
+      //     ...formData,
+      //     from_name: formData.name,
+      //     reply_to: formData.email,
+      //   },
+      //   PUBLIC_KEY,
+      // );
       await emailjs.send(
         SERVICE_ID,
         TEMPLATE_ID,
@@ -52,7 +62,9 @@ const Contact = () => {
           from_name: formData.name,
           reply_to: formData.email,
         },
-        PUBLIC_KEY,
+        {
+          publicKey: PUBLIC_KEY,
+        }
       );
       setStatus("success");
       setFormData({
