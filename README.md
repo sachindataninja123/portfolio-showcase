@@ -11,6 +11,8 @@ Each portfolio has a unique design, layout, and purpose to showcase skills and p
 **Description:**  
 A clean and responsive personal portfolio website showcasing profile, skills, projects, and contact information.
 
+**View Live** - https://hellosachin.netlify.app/
+
 **Features:**
 - Responsive design
 - About, Skills, Projects, and Contact sections
@@ -21,7 +23,6 @@ A clean and responsive personal portfolio website showcasing profile, skills, pr
 - HTML
 - CSS
 - JavaScript  
-*(or React / Tailwind / etc. — update if needed)*
 
 📁 Folder: `portfolio-1`
 
@@ -31,11 +32,12 @@ A clean and responsive personal portfolio website showcasing profile, skills, pr
 **Description:**  
 A more advanced portfolio with enhanced UI/UX and component-based structure.
 
+**View Live** - https://hiisachin.netlify.app/
+
 **Features:**
 - Modern UI design
 - Smooth navigation
 - Project showcase
-- Reusable components
 - Frontend-only functionality
 
 **Tech Stack:**
@@ -44,26 +46,6 @@ A more advanced portfolio with enhanced UI/UX and component-based structure.
 - JavaScript  
 
 📁 Folder: `portfolio-2`
-
-### 🔹 Portfolio 3 – Modern React Portfolio Website
-**Description:**  
-A more advanced portfolio with enhanced UI/UX and component-based structure.
-
-**Features:**
-- Modern UI design
-- Smooth navigation
-- Project showcase
-- Reusable components
-- Frontend-only functionality
-
-**Tech Stack:**
-- HTML
-- CSS
-- JavaScript 
-- React js
-- Framer Motion 
-
-📁 Folder: `portfolio-3`
 
 ---
 
